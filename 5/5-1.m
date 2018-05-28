@@ -1,0 +1,16 @@
+wm = 1;
+wc = wm;
+Ts = pi/wm;
+ws = 2*pi/Ts;
+n = -100:100;
+nTs = n*Ts;
+f = sinc(nTs/pi);
+Dt = 0.005; t = -15:Dt:15;
+fa = f*Ts*wc/pi*sinc((wc/pi)*(ones(length(nTs),1)*t-nTs'*ones(1,length(t))));
+t1 = -15:0.5:15;
+f1 = sinc(t1/pi);
+subplot(211); stem(t1,f1); 
+xlabel('kTs');ylabel('kTs');title('sa(t) = sinc(t/pi) 的采样信号');
+subplot(212); plot(t,fa);
+xlabel('t'); ylabel('fa(t)');title('由sa(t) = sinc(t/pi)临界采样信号重构sa(t) ');
+grid ;
