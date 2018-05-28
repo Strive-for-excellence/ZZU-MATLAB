@@ -1,0 +1,14 @@
+R = 0.02;t = -2:R:2;
+f = Heaviside(t+1)-Heaviside(t-1);
+W1 = 2*pi*5;
+N = 500; k = 0:N; W = k*W1/N;
+F = f*exp(-j*t'*W)*R;
+F = real(F);
+W = [-fliplr(W) , W(2:501)];
+F=  [ fliplr(F),F(2:501)];
+subplot(211); plot(t,f);
+xlabel('t'); ylabel('f(t)');
+title('f(t) = u(t+1)-u(t-1)');
+subplot(212);plot(W,F);
+xlabel('w');ylabel('F(w)');
+title('f(t)傅里叶变换');
