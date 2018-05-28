@@ -1,0 +1,13 @@
+w = 0:0.025:5;
+b = [1]; a= [1,2,2,1];
+H = freqs(b,a,w);
+subplot(211);
+plot(w,abs(H)); grid;
+xlabel('\omega(rad/s)');
+ylabel('|H(j\omega)|');
+title('H(jw)幅频特性');
+subplot(212);
+plot(w,angle(H)); grid;
+xlabel('\omega(rad/s)');
+ylabel('\phi(\omega)');
+title('H(jw) 的相频特性');
