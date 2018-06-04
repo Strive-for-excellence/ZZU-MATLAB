@@ -17,7 +17,7 @@ xlabel('t'); ylabel('fa(t)');title('由sa(t) = sinc(t/pi)临界采样信号重�
 grid ;
 error = abs(fa - 0.5*(1+cos(t)).*(Heaviside(t+pi)-Heaviside(t-pi)));
 subplot(313);plot(t,error); xlabel('t');ylabel('error(t)'); 
-title('过采样信号与原信号的误差error(t)');
+title('采样信号与原信号的误差error(t)');
 
 
 % 2 wm = 2,wc = 2,Ts = 2.5;
@@ -39,4 +39,4 @@ xlabel('t'); ylabel('fa(t)');title('由sa(t) = sinc(t/pi)临界采样信号重�
 grid ;
 error = abs(fa - 0.5*(1+cos(t)).*(Heaviside(t+pi)-Heaviside(t-pi)));
 subplot(313);plot(t,error); xlabel('t');ylabel('error(t)'); 
-title('过采样信号与原信号的误差error(t)');
+title('采样信号与原信号的误差error(t)');
